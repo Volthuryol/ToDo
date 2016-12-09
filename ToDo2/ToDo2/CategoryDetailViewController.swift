@@ -8,11 +8,13 @@
 
 import UIKit
 
-class CategoryDetailViewController: UIViewController {
-    
+import UIKit
+
+class ToDoCatDetailViewController: UIViewController {
+
     @IBOutlet weak var categoryName: UITextField!
-    
-    var category = Category()
+
+    var category = ToDoCategory()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,25 +26,25 @@ class CategoryDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     func dismissKeyboard() {
         view.endEditing(true)
     }
-    
+
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         category.name = categoryName.text!
     }
-    
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         var returnValue = true
         if identifier == "saveCategoryDetail" {
             categoryName.text != "" ? (returnValue = true) : (returnValue = false)
             if returnValue == false {
-                let alert = UIAlertController(title: "Error", message: "You must enter a value for the category name!", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error!", message: "You need to enter a category name!", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                
+
             }
         }
         return returnValue

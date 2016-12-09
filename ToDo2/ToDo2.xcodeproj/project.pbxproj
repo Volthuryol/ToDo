@@ -18,7 +18,7 @@
 		7C21B1E91DF90B8D005367B2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21B1DE1DF90B8D005367B2 /* ImageViewController.swift */; };
 		7C21B1EA1DF90B8D005367B2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C21B1DF1DF90B8D005367B2 /* Info.plist */; };
 		7C21B1EB1DF90B8D005367B2 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21B1E01DF90B8D005367B2 /* Task.swift */; };
-		7C21B1EC1DF90B8D005367B2 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21B1E11DF90B8D005367B2 /* TaskDetailViewController.swift */; };
+		7C21B1EC1DF90B8D005367B2 /* ToDoTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21B1E11DF90B8D005367B2 /* ToDoTaskDetailViewController.swift */; };
 		7C21B1ED1DF90B8D005367B2 /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21B1E21DF90B8D005367B2 /* TaskStore.swift */; };
 		7C21B1EE1DF90B8D005367B2 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21B1E31DF90B8D005367B2 /* TaskTableViewCell.swift */; };
 		7C21B1EF1DF90B8D005367B2 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21B1E41DF90B8D005367B2 /* ToDoTableViewController.swift */; };
@@ -37,7 +37,7 @@
 		7C21B1DE1DF90B8D005367B2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		7C21B1DF1DF90B8D005367B2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C21B1E01DF90B8D005367B2 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		7C21B1E11DF90B8D005367B2 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		7C21B1E11DF90B8D005367B2 /* ToDoTaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTaskDetailViewController.swift; sourceTree = "<group>"; };
 		7C21B1E21DF90B8D005367B2 /* TaskStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		7C21B1E31DF90B8D005367B2 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		7C21B1E41DF90B8D005367B2 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 				7C21B1DE1DF90B8D005367B2 /* ImageViewController.swift */,
 				7C21B1DF1DF90B8D005367B2 /* Info.plist */,
 				7C21B1E01DF90B8D005367B2 /* Task.swift */,
-				7C21B1E11DF90B8D005367B2 /* TaskDetailViewController.swift */,
+				7C21B1E11DF90B8D005367B2 /* ToDoTaskDetailViewController.swift */,
 				7C21B1E21DF90B8D005367B2 /* TaskStore.swift */,
 				7C21B1E31DF90B8D005367B2 /* TaskTableViewCell.swift */,
 				7C21B1E41DF90B8D005367B2 /* ToDoTableViewController.swift */,
@@ -166,7 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C21B1EC1DF90B8D005367B2 /* TaskDetailViewController.swift in Sources */,
+				7C21B1EC1DF90B8D005367B2 /* ToDoTaskDetailViewController.swift in Sources */,
 				7C21B17B1DF5B860005367B2 /* AppDelegate.swift in Sources */,
 				7C21B1E61DF90B8D005367B2 /* CategoryDetailViewController.swift in Sources */,
 				7C21B1E91DF90B8D005367B2 /* ImageViewController.swift in Sources */,

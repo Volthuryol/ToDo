@@ -8,8 +8,10 @@
 
 import UIKit
 
-class EditCategoriesTableViewController: UITableViewController, UITextFieldDelegate {
-    
+import UIKit
+
+class ToDoEditCatTableViewController: UITableViewController, UITextFieldDelegate {
+
     @IBOutlet weak var categoryToAdd: UITextField!
 
     override func viewDidLoad() {
@@ -17,7 +19,7 @@ class EditCategoriesTableViewController: UITableViewController, UITextFieldDeleg
         self.categoryToAdd.delegate = self
         categoryToAdd.autocapitalizationType = .sentences
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -29,52 +31,50 @@ class EditCategoriesTableViewController: UITableViewController, UITextFieldDeleg
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CategoryStore.shared.getCategoryCount()
+        return ToDoCatStore.shared.getCategoryCount()
     }
 
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
-        
-        cell.textLabel?.text = CategoryStore.shared.getCategory(indexPath.row)
+
+        cell.textLabel?.text = ToDoCatStore.shared.getCategory(indexPath.row)
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            CategoryStore.shared.removeCategory(indexPath.row)
-            TaskStore.shared.removeSection(indexPath.row)
+            ToDoCatStore.shared.removeCategory(indexPath.row)
+            ToDoTaskStore.shared.removeSection(indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "editCategory" {
-            let taskDetailVC = segue.destination as! CategoryDetailViewController
-            let tableCell = sender as! UITableViewCell
-            taskDetailVC.category.name = (tableCell.textLabel?.text)!
-        }
-    }
-    
-    //MARK: - IBActions
-    
-    @IBAction func saveCategoryDetail(_ segue: UIStoryboardSegue) {
-        let taskDetailVC = segue.source as! CategoryDetailViewController
-        if let indexPath = tableView.indexPathForSelectedRow {
-            CategoryStore.shared.updateCategory(indexPath.row, taskDetailVC.category.name)
-            tableView.reloadData()
-        }
-    }
-    
+
     @IBAction func addCategory(_ sender: AnyObject) {
         if categoryToAdd.text != "" {
-            CategoryStore.shared.addCategory(categoryToAdd.text!)
-            TaskStore.shared.addNewSection()
+            ToDoCatStore.shared.addCategory(categoryToAdd.text!)
+            ToDoTaskStore.shared.addNewSection()
             categoryToAdd.resignFirstResponder()
             tableView.reloadData()
         }
         categoryToAdd.text = ""
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editCategory" {
+            let taskDetailVC = segue.destination as! ToDoCatDetailViewController
+            let tableCell = sender as! UITableViewCell
+            taskDetailVC.category.name = (tableCell.textLabel?.text)!
+        }
+    }
+
+    @IBAction func saveCategoryDetail(_ segue: UIStoryboardSegue) {
+        let taskDetailVC = segue.source as! ToDoCatDetailViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            ToDoCatStore.shared.updateCategory(indexPath.row, taskDetailVC.category.name)
+            tableView.reloadData()
+        }
     }
 }
 
